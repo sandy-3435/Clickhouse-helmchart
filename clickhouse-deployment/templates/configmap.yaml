@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: clickhouse-config
+data:
+  clickhouse-config.xml: |
+    <!-- ClickHouse Configuration -->
+    <yandex>
+      <storage_configuration>
+        <disks>
+          <s3>
+            <move_factor>{{ .Values.moveFactor }}</move_factor>
+          </s3>
+        </disks>
+        <volumes>
+          <hot>
+            <path>/var/lib/clickhouse/data/hot</path>
+            <max_data_part_size>{{ .Values.storage.hotSize }}</max_data_part_size>
+          </hot>
+          <cold>
+            <path>/var/lib/clickhouse/data/cold</path>
+            <max_data_part_size>{{ .Values.storage.coldSize }}</max_data_part_size>
+          </cold>
+        </volumes>
+      </storage_configuration>
+    </yandex>
