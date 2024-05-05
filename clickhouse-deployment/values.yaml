@@ -1,5 +1,7 @@
-replicaCount: 1
+#This file consists of variables
+replicaCount: 1 # 2 for high availability
 image:
+  #Clickhouse image
   repository: yandex/clickhouse-server
   tag: latest
   pullPolicy: IfNotPresent
