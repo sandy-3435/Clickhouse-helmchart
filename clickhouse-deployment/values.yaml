@@ -1,4 +1,4 @@
-#This file consists of variables
+# This file defines configurable parameters for the Helm chart
 replicaCount: 1 # 2 for high availability
 image:
   #Clickhouse image

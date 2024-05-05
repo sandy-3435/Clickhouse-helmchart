@@ -1,3 +1,5 @@
+# This file contains ClickHouse's configurations like settings for storage, disks, volumes, and
+# data paths are specified
 apiVersion: v1
 kind: ConfigMap
 metadata:

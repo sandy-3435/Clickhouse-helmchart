@@ -1,3 +1,4 @@
+# This file contains metadata about the Helm chart
 apiVersion: v2
 name: clickhouse
 description: A Helm chart for deploying ClickHouse in Kubernetes

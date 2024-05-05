@@ -1,3 +1,4 @@
+# This file exposes an application running on a set of Pods as a network service on port 8123. 
 apiVersion: v1
 kind: Service
 metadata:
