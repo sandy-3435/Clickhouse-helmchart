@@ -5,8 +5,9 @@ To install clickhouse-server we have to install Helm package manager for Kuberne
 
 1. Execute the command "$ helm install clickhouse ["Path of the repo downloaded"]"
 2. To check the ClickHouse pods are running "$ kubectl get pods"
-
-                                                    Testing Data Movement
+------------------------------------
+   
+# **Testing Data Movement**
 
 To specifically test data movement from hot to cold storage based on the configured move factor (0.2):
 
@@ -15,19 +16,19 @@ To specifically test data movement from hot to cold storage based on the configu
 
 2.Create a Test Table:
 >Connect to the ClickHouse instance deployed in the Kubernetes cluster.
->Create a test table similar to the one specified in your SQL statements
- 
- CREATE TABLE dz_test
-(
-    `B` Int64,
-    `T` String,
-    `D` Date
-)
-ENGINE = MergeTree
-PARTITION BY D
-ORDER BY B
-# insert data
-insert into dz_test select number, number, '2023-01-01' from numbers(1e9);
+>Create a test table similar to the one specified in your SQL statements 
+
+       CREATE TABLE dz_test
+       (
+         `B` Int64,
+         `T` String,
+         `D` Date
+       )
+       ENGINE = MergeTree
+       PARTITION BY D
+       ORDER BY B
+       insert into dz_test select number, number, '2023-01-01' from numbers(1e9);
+
 
 3.Generate Data:
 > Insert a significant amount of data into your ClickHouse database, ensuring it exceeds the threshold for hot storage.
