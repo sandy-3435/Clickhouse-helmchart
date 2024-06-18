@@ -1,5 +1,5 @@
 # This file defines configurable parameters for the Helm chart
-replicaCount: 1 # 2 for high availability
+replicaCount: 2 # 2 for high availability
 image:
   #Clickhouse image
   repository: yandex/clickhouse-server

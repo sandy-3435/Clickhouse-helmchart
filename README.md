@@ -1,4 +1,4 @@
-# PillaSandeep-Datazip-Assignment
+# Create Clickhouse in K8s using helm chart
  DataZip assignment
 
 To install clickhouse-server we have to install Helm package manager for Kubernetes and Command line tool (kubectl) for kubernates.\ and then,
